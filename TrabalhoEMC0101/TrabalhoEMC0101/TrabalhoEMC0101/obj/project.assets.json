@@ -637,11 +637,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\m-ric\\source\\repos\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
+      "projectUniqueName": "C:\\Users\\m-ric\\Desktop\\Projetos\\Trabalho\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
       "projectName": "TrabalhoEMC0101",
-      "projectPath": "C:\\Users\\m-ric\\source\\repos\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
+      "projectPath": "C:\\Users\\m-ric\\Desktop\\Projetos\\Trabalho\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
       "packagesPath": "C:\\Users\\m-ric\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\m-ric\\source\\repos\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\obj\\",
+      "outputPath": "C:\\Users\\m-ric\\Desktop\\Projetos\\Trabalho\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

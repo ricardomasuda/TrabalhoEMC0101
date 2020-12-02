@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YPbbmoIb4HPUPt127onDFLGtCaFlsTAd7IXCWtmHKtSLtW8XO46F0tNcF1wGdvxnK71skGJIWapApwHfX0tp4g==",
+  "dgSpecHash": "h2D2IG1ezaVVfDmx7UMWLdQGz5b81jqkTeVa7QLl7J7jiNZQqgorqDA50cJD1tfi+6BNiKEiVg27uzkevtz45Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\m-ric\\source\\repos\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
+  "projectFilePath": "C:\\Users\\m-ric\\Desktop\\Projetos\\Trabalho\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101\\TrabalhoEMC0101.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\m-ric\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\m-ric\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
