@@ -1,6 +1,5 @@
 ﻿using System;
 using TrabalhoEMC0101.Services;
-using TrabalhoEMC0101.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +12,7 @@ namespace TrabalhoEMC0101
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            
             MainPage =new NavigationPage(new MasterPage());
         }
 
