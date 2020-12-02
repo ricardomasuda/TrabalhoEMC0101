@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Conversor"
+             BackgroundColor="#2196F3"
+             x:Class="TrabalhoEMC0101.MasterPage">
+    <ContentPage.Content>
+        <StackLayout  BackgroundColor="White">
+            <StackLayout BackgroundColor="#96d1ff">
+                <Label 
+                    Margin="5"
+                    Text="Conversor de números binários" 
+                    TextColor="White"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Margin="5,0,0,0"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="12"
+                    Text="Aluno: Ricardo Masuda"
+                    />
+                <Label
+                    Margin="5,0,0,10"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    FontSize="12"
+                    Text="Matricula: 201800226      Cod. Cuso : EMC0101"
+                    />
+            </StackLayout>
+           
+            <StackLayout 
+                Margin="0,15,0,0"
+                VerticalOptions="FillAndExpand"
+                >
+                <Label
+                    BindingContext="{Binding numeroBinario}"
+                    VerticalOptions="Start"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Número binários"
+                    />
+                <Entry
+                    Keyboard="Numeric"
+                    Margin="25,10,25,10"
+                    BackgroundColor="White"
+                    />
+                <Button 
+                    Command="{Binding ConverterCMD}"
+                    Text="Converter"
+                     Margin="25,10,25,10"
+                    />
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Número decimal"
+                    />
+                <Entry
+                    BindingContext="{Binding numeroDecimal}"
+                    Keyboard="Numeric"
+                    Margin="25,10,25,10"
+                    BackgroundColor="White"
+                    />
+            </StackLayout>
+           
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
