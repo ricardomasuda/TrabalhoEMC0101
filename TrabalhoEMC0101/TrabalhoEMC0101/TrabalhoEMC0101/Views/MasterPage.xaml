@@ -36,19 +36,19 @@
                 VerticalOptions="FillAndExpand"
                 >
                 <Label
-                    BindingContext="{Binding numeroBinario}"
                     VerticalOptions="Start"
                     HorizontalOptions="CenterAndExpand"
                     Text="Número binários"
                     />
                 <Entry
+                    Text="{Binding numeroBinario}"
                     Keyboard="Numeric"
                     Margin="25,10,25,10"
                     BackgroundColor="White"
                     />
                 <Button 
                     Command="{Binding ConverterCMD}"
-                    Text="Converter"
+                    Text="{Binding Texto}"
                      Margin="25,10,25,10"
                     />
                 <Label
@@ -56,7 +56,7 @@
                     Text="Número decimal"
                     />
                 <Entry
-                    BindingContext="{Binding numeroDecimal}"
+                    Text="{Binding numeroDecimal}"
                     Keyboard="Numeric"
                     Margin="25,10,25,10"
                     BackgroundColor="White"

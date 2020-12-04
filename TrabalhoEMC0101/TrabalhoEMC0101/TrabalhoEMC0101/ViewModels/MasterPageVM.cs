@@ -1,49 +1,89 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 using TrabalhoEMC0101.Models;
 using Xamarin.Forms;
 
 namespace TrabalhoEMC0101.ViewModels
 {
-    class MasterPageVM
+    class MasterPageVM : INotifyPropertyChanged
     {
-        public int numeroBinario { get; set; }
-        public int numeroDecimal { get; set; }
+
+        private int _numeroBinario;
+        public int numeroBinario { get { return _numeroBinario; } set { _numeroBinario = value; OnPropertyChanged("numeroBinario"); } }
+        public int _numeroDecimal { get; set; }
+        public int numeroDecimal { get { return _numeroDecimal; } set { _numeroDecimal = value; OnPropertyChanged("numeroDecimal"); } }
+        public string _Texto { get; set; }
+        public string Texto { get { return _Texto; } set { _Texto = value; OnPropertyChanged("Texto"); } }
         public Command ConverterCMD { get; set; }
-        public  MasterPageVM()
+        Page Page;
+        public MasterPageVM(Page page)
         {
+            Page = page;
             ConverterCMD = new Command(Converter);
+            Texto = "Converter";
         }
 
-        public void Converter()
+        public async void Converter()
         {
-            if (Validar())
+            if (Texto == "Converter")
             {
-                if (numeroBinario == 0)
+                if (await Validar())
                 {
-                    numeroBinario= Conversor.BinarioDecimal(numeroBinario.ToString());
-                }
-                else
-                {
-                    numeroDecimal = Convert.ToInt32(Conversor.DecimalBinario(numeroDecimal.ToString()));
+                    if (numeroBinario != 0)
+                    {
+                        numeroDecimal = Conversor.BinarioDecimal(numeroBinario.ToString());
+                    }
+                    else
+                    {
+                        numeroBinario = Convert.ToInt32(Conversor.DecimalBinario(numeroDecimal.ToString()));
+                    }
                 }
             }
+            else
+            {
+                numeroDecimal = 0;
+                numeroBinario = 0;
+            }
+            Texto = Texto == "Converter" ? "Limpar" : "Converter";
+            //if (Texto == "Converter")
+            //{
+            //    Texto = "Limpar";
+            //}
+            //else
+            //{
+            //    Texto = "Converter";
+            //}
         }
 
-        public bool Validar()
+        public async Task<bool> Validar()
         {
             if (numeroBinario == 0 && numeroDecimal == 0)
             {
+                await Page.DisplayAlert("Erro","Insira ao menos um valor","Ok");
+                return false;
+            }
+            if (numeroBinario.ToString().Contains("0") || numeroBinario.ToString().Contains("1"))
+            {
+                await Page.DisplayAlert("Erro", "Insira apenas valores 1 e 0", "Ok");
                 return false;
             }
             if (numeroBinario == 0 || numeroDecimal == 0)
             {
                 return true;
             }
-            else
+            return false;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string NameProperty)
+        {
+            if (PropertyChanged != null)
             {
-                return false;
+                PropertyChanged(this, new PropertyChangedEventArgs(NameProperty));
             }
         }
     }

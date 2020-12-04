@@ -20,7 +20,7 @@ namespace TrabalhoEMC0101
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            BindingContext = new MasterPageVM();
+            BindingContext = new MasterPageVM(this);
         }
 
     }
