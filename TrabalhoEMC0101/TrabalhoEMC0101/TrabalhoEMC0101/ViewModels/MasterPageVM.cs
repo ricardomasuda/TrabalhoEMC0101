@@ -40,14 +40,16 @@ namespace TrabalhoEMC0101.ViewModels
                     {
                         numeroBinario = Convert.ToInt32(Conversor.DecimalBinario(numeroDecimal.ToString()));
                     }
+                    Texto = Texto == "Converter" ? "Limpar" : "Converter";
                 }
             }
             else
             {
                 numeroDecimal = 0;
                 numeroBinario = 0;
+                Texto = Texto == "Converter" ? "Limpar" : "Converter";
             }
-            Texto = Texto == "Converter" ? "Limpar" : "Converter";
+           
             //if (Texto == "Converter")
             //{
             //    Texto = "Limpar";
@@ -65,10 +67,14 @@ namespace TrabalhoEMC0101.ViewModels
                 await Page.DisplayAlert("Erro","Insira ao menos um valor","Ok");
                 return false;
             }
-            if (numeroBinario.ToString().Contains("0") || numeroBinario.ToString().Contains("1"))
+           
+            for (int i = 2; i<=9; i++)
             {
-                await Page.DisplayAlert("Erro", "Insira apenas valores 1 e 0", "Ok");
-                return false;
+                if( numeroBinario.ToString().Contains(i.ToString()))
+                {
+                    await Page.DisplayAlert("Erro", "Insira apenas valores 1 e 0", "Ok");
+                    return false;
+                }
             }
             if (numeroBinario == 0 || numeroDecimal == 0)
             {

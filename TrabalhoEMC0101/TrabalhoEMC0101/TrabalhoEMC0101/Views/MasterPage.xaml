@@ -58,6 +58,7 @@
                 <Entry
                     Text="{Binding numeroDecimal}"
                     Keyboard="Numeric"
+                    IsReadOnly="True"
                     Margin="25,10,25,10"
                     BackgroundColor="White"
                     />
