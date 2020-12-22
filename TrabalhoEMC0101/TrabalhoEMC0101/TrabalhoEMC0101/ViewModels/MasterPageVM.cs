@@ -18,11 +18,13 @@ namespace TrabalhoEMC0101.ViewModels
         public string _Texto { get; set; }
         public string Texto { get { return _Texto; } set { _Texto = value; OnPropertyChanged("Texto"); } }
         public Command ConverterCMD { get; set; }
+        public thingspeak thingspeak { get; set; } = new thingspeak();
         Page Page;
         public MasterPageVM(Page page)
         {
             Page = page;
             ConverterCMD = new Command(Converter);
+            thingspeak.BuscarInfo();
             Texto = "Converter";
         }
 

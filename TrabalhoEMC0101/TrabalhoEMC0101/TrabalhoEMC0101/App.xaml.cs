@@ -1,5 +1,4 @@
 ﻿using System;
-using TrabalhoEMC0101.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
