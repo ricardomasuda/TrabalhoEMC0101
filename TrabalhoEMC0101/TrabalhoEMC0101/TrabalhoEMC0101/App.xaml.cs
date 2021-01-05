@@ -6,7 +6,7 @@ namespace TrabalhoEMC0101
 {
     public partial class App : Application
     {
-
+        public static string URL {get ;set ;}
         public App()
         {
             InitializeComponent();

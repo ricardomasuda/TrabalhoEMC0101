@@ -13,7 +13,7 @@ namespace TrabalhoEMC0101.Pacote
     class HttpRequest<Request>
     {
         const string URL = "https://api.thingspeak.com/channels/1259078/feeds.json?api_key=GPMP5WBQX96M5LTK&results=1";
-
+        public static string _url { get; set; }
         public class ApiResponse
         {
             public Object feeds { get; set; }
@@ -28,7 +28,11 @@ namespace TrabalhoEMC0101.Pacote
             try
             {
                 //var _json = JsonConvert.SerializeObject(_requisicao);
-                var _url = URL ;
+                if (!string.IsNullOrEmpty(App.URL))
+                     _url = App.URL;
+                else
+                    _url = URL;
+
 
                 HttpClient _client = new HttpClient();
                 _client.Timeout = new TimeSpan(0, 0, 15);

@@ -8,7 +8,7 @@ using static TrabalhoEMC0101.Pacote.Request;
 
 namespace TrabalhoEMC0101.Models
 {
-    class thingspeak
+    public class thingspeak
     {
         public async Task<feeds> BuscarInfo()
         {

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 using TrabalhoEMC0101.Models;
+using TrabalhoEMC0101.Views;
 using Xamarin.Forms;
 
 namespace TrabalhoEMC0101.ViewModels
@@ -18,15 +19,32 @@ namespace TrabalhoEMC0101.ViewModels
         public string _Texto { get; set; }
         public string Texto { get { return _Texto; } set { _Texto = value; OnPropertyChanged("Texto"); } }
         public Command ConverterCMD { get; set; }
+        public Command ThingspeakCMD { get; set; }
+        public Command ConfingurarCMD { get; set; }
         public thingspeak thingspeak { get; set; } = new thingspeak();
         Page Page;
         public MasterPageVM(Page page)
         {
             Page = page;
             ConverterCMD = new Command(Converter);
-            thingspeak.BuscarInfo();
+            ThingspeakCMD = new Command(BuscaThigs);
+            ConfingurarCMD = new Command(ConfigurarURL);
+            BuscaThigs();
             Texto = "Converter";
         }
+        
+        public async void ConfigurarURL()
+        {
+           await Page.Navigation.PushAsync(new ConfigurarURL());
+        }
+
+        public async void BuscaThigs()
+        {
+            //thingspeak things = new thingspeak();
+            var feed=  await thingspeak.BuscarInfo();
+            numeroDecimal = Convert.ToInt32(feed.field1);
+        }
+
 
         public async void Converter()
         {
@@ -51,15 +69,6 @@ namespace TrabalhoEMC0101.ViewModels
                 numeroBinario = 0;
                 Texto = Texto == "Converter" ? "Limpar" : "Converter";
             }
-           
-            //if (Texto == "Converter")
-            //{
-            //    Texto = "Limpar";
-            //}
-            //else
-            //{
-            //    Texto = "Converter";
-            //}
         }
 
         public async Task<bool> Validar()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TrabalhoEMC0101.Models
 {
-    class feeds
+    public class feeds
     {
         public string created_at { get; set; }
         public string entry_id { get; set; }

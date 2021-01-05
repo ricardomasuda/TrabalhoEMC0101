@@ -43,6 +43,7 @@
                 <Entry
                     Text="{Binding numeroBinario}"
                     Keyboard="Numeric"
+                     IsReadOnly="True"
                     Margin="25,10,25,10"
                     BackgroundColor="White"
                     />
@@ -61,6 +62,17 @@
                     IsReadOnly="True"
                     Margin="25,10,25,10"
                     BackgroundColor="White"
+                    />
+                <Button 
+                    Command="{Binding ThingspeakCMD}"
+                    BackgroundColor="#77dd77"
+                    Text="Buscar Thingspeak"
+                    Margin="25,150,25,10"
+                    />
+                <Button 
+                    Command="{Binding ConfingurarCMD}"
+                    Text="Configurar"
+                    Margin="25,15,25,10"
                     />
             </StackLayout>
            
