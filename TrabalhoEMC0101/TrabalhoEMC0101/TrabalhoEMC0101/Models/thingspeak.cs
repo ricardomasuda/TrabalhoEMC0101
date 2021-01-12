@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrabalhoEMC0101.Pacote;
@@ -19,7 +20,11 @@ namespace TrabalhoEMC0101.Models
                 {
                     JArray jObject = response.feeds as JArray;
                     var ListaLocal = jObject.ToObject<List<feeds>>();
-                    return ListaLocal[0];
+                    if (ListaLocal.Count() != 0)
+                    {
+                        return ListaLocal[ListaLocal.Count()-1];
+                    }
+                  
                 }
                 catch (Exception e)
                 {
